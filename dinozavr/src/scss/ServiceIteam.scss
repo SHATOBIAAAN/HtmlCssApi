@@ -1,0 +1,25 @@
+.service-item {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    min-width: 300px;
+    width: 100%;
+    min-height: 300px;
+    padding-top: 140px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 1px;
+        background-color: #fff;
+    }
+}

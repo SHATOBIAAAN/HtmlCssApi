@@ -1,0 +1,97 @@
+.rental-section {
+    &__container {
+        display: flex;
+        flex-direction: column; // Мобильная версия - колонка
+        position: relative;
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
+
+    &__image {
+        width: 100%;
+        margin-left: 0;
+        order: 1; // Изображение сверху в мобильной версии
+        margin-bottom: 1rem; // Добавил отступ снизу
+
+        img {
+            width: 100%;
+            max-height: 300px; // Уменьшил максимальную высоту
+            object-fit: cover; // Сохраняет пропорции изображения
+            object-position: center 25%; // Смещение фокуса изображения
+        }
+    }
+
+    &__content {
+        order: 2; // Контент снизу в мобильной версии
+        padding: 1rem 0.5rem 0; // Уменьшил вертикальные отступы
+        max-width: 100%;
+        text-align: center;
+    }
+
+    &__description {
+        margin-top: 1rem;
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    // Средние мобильные (480px и выше)
+    @media screen and (min-width: 480px) {
+        &__image img {
+            max-height: 350px;
+        }
+
+        &__content {
+            padding: 1.5rem 1rem 0;
+        }
+    }
+
+    // Планшеты (600px и выше)
+    @media screen and (min-width: 600px) {
+        &__image img {
+            max-height: 400px;
+        }
+
+        &__content {
+            padding: 2rem 2rem 0;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    // Десктопная версия
+    @media screen and (min-width: 769px) {
+        &__container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 600px;
+            padding: 2rem 0;
+        }
+
+        &__image {
+            width: 55%;
+            margin-left: 0;
+            order: 0;
+
+            img {
+                max-height: none;
+                border-radius: 8px;
+            }
+        }
+
+        &__content {
+            width: 40%;
+            text-align: left;
+            padding: 0 2rem;
+            margin-right: 5%;
+        }
+
+        &__description {
+            margin-top: 20px;
+            p {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
